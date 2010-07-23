@@ -12,17 +12,26 @@ StartTest(function(t) {
     new KiokuJS.Test({
         t       : t,
         
-        init    : function () {
+        connect : function () {
             
-            
-            
-            return KiokuJS.connect({
-                backend : new KiokuJS.Backend.CouchDB({
-                    host    : 'localhost',
-                    
-                    dbName  : 'KiokuJS.Backend.CouchDB.' + new Date().getTime()
-                })
+            var backend = new KiokuJS.Backend.CouchDB({
+                host    : 'localhost',
+                port    : 1234,
+                prefix  : 'db',
+                
+                dbName  : 'kiokujs-backend-couchdb-' + new Date().getTime()
             })
+            
+            backend.createDB().andThen(function () {
+                
+                this.CONTINUE(KiokuJS.connect({
+                    backend : backend
+                }))
+            })
+        },
+        
+        cleanup : function (handle, t) {
+            handle.backend.deleteDB().now()
         }
         
     }).runAllFixtures().andThen(function () {
