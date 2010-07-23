@@ -7,28 +7,20 @@ COMPONENTS = {
 	],
 	
     
-    "WebBundle" : [
-    	"jsan:Task.KiokuJS.WebBundle",
-    	"+Core"
+    "WebPrereq" : [
+    	"jsan:Task.KiokuJS.WebPrereq",
+        "jsan:Task.HTTP.Request.Provider.Web"
     ],
     
     
-    "NodeJSBundle" : [
-        "jsan:Task.KiokuJS.NodeJSBundle",
+    "NodeJSPrereq" : [
+        "jsan:Task.KiokuJS.NodeJSPrereq",
+        "jsan:Task.HTTP.Request.Provider.NodeJS"
+    ],
+    
+    
+    "Test" : [
+        "jsan:Task.KiokuJS.Test",
         "+Core"
-    ],
-    
-    
-    "WebTest" : [
-        "+WebBundle",
-        
-        "jsan:Task.KiokuJS.Test"
-    ],
-    
-    
-    "NodeJSTest" : [
-        "+NodeJSBundle",
-        
-        "jsan:Task.KiokuJS.Test"
     ]
 }
