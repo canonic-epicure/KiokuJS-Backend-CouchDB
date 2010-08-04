@@ -31,7 +31,7 @@ StartTest(function(t) {
         },
         
         cleanup : function (handle, t) {
-            handle.backend.deleteDB().now()
+//            handle.backend.deleteDB().now()
         }
         
     }).runAllFixtures().andThen(function () {
