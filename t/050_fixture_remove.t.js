@@ -12,6 +12,8 @@ StartTest(function(t) {
     new KiokuJS.Test({
         t       : t,
         
+        fixtures    : [ 'Remove' ],
+        
         connect : function () {
             
             var backend = new KiokuJS.Backend.CouchDB({
