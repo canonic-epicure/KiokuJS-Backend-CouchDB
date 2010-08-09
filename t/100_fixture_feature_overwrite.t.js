@@ -12,7 +12,7 @@ StartTest(function(t) {
     new KiokuJS.Test({
         t       : t,
         
-        fixtures    : [ 'Overwrite' ],
+        fixtures    : [ 'BackendFeature.Overwrite' ],
         
         connect : function () {
             

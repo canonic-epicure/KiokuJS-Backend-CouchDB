@@ -34,8 +34,11 @@ Harness.configure({
 Harness.start(
 	'010_sanity.t.js',
     '020_fixture_object_graph.t.js',
-    '030_fixture_overwrite.t.js',
+    '030_fixture_refresh.t.js',
     '040_fixture_update.t.js',
     '050_fixture_remove.t.js',
-    '060_fixture_stressload_tree.t.js'
+    
+    '060_fixture_stressload_tree.t.js',
+    
+    '100_fixture_feature_overwrite.t.js'
 )
