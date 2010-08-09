@@ -36,5 +36,6 @@ Harness.start(
     '020_fixture_object_graph.t.js',
     '030_fixture_overwrite.t.js',
     '040_fixture_update.t.js',
-    '050_fixture_remove.t.js'
+    '050_fixture_remove.t.js',
+    '060_fixture_stressload_tree.t.js'
 )
