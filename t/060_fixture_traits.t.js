@@ -12,7 +12,7 @@ StartTest(function(t) {
     new KiokuJS.Test({
         t       : t,
         
-        fixtures    : [ 'Update' ],
+        fixtures    : [ 'Traits' ],
         
         connect : function () {
             
@@ -32,9 +32,6 @@ StartTest(function(t) {
             })
         },
         
-        
-//        skipCleanup : true,
-
         cleanup : function (handle, t) {
             handle.backend.deleteDB().now()
         }
