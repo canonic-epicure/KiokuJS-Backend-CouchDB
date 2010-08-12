@@ -70,11 +70,11 @@ StartTest(function(t) {
         var person50 = new KiokuJS.Test.Person({
             name    : 'person50',
             
-            age     : 10
+            age     : 50
         })
         
 
-        scope.store(person10, person20, person30, person40, person50).andThen(function () {
+        scope.store(person20, person30, person10, person40, person50).andThen(function () {
             
             scope.search({
                 designDoc   : 'search_test',
@@ -85,20 +85,25 @@ StartTest(function(t) {
                 
             }).andThen(function () {
                 
-                debugger
-                
-                DB.backend.deleteDB().andThen(function () {
-                    t.endAsync(async0)
+                Joose.A.each(arguments, function (res, index) {
                     
-                    t.done()
+                    t.ok(res.age == (index + 1) * 10, 'Results come sorted by age #' + (index + 1) )
+                    t.ok(res.name == 'person' + (index + 1) * 10, 'Results come sorted by age #' + (index + 1) )
                 })
+                
+                this.CONTINUE()
             })
         })
         
-    }).except(function () {
+    }).FINALLY(function () {
         
         backend.deleteDB().now()
         
-    }).now()
+    }).andThen(function () {
+        
+        t.endAsync(async0)
+        
+        t.done()
+    })
 })    
 
