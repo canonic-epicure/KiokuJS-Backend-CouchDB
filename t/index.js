@@ -42,6 +42,8 @@ Harness.start(
     '070_fixture_intrinsic.t.js',
     '080_fixture_immutable.t.js',
     
+    '100_search_basic.t.js',
+    
     '200_fixture_feature_overwrite.t.js',
     '300_fixture_stressload_tree.t.js'
 )
