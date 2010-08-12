@@ -80,15 +80,17 @@ StartTest(function(t) {
                 designDoc   : 'search_test',
                 view        : 'view1',
                 
-                startkey    : 10,
-                limit       : 20
+                startkey    : 20,
+                limit       : 3
                 
-            }).andThen(function () {
+            }).andThen(function (person20) {
+                
+                t.ok(person20.age == 20, 'Correct object returned first')
                 
                 Joose.A.each(arguments, function (res, index) {
                     
-                    t.ok(res.age == (index + 1) * 10, 'Results come sorted by age #' + (index + 1) )
-                    t.ok(res.name == 'person' + (index + 1) * 10, 'Results come sorted by age #' + (index + 1) )
+                    t.ok(res.age == (index + 2) * 10, 'Results come sorted by age #' + (index + 1) )
+                    t.ok(res.name == 'person' + (index + 2) * 10, 'Results come sorted by age #' + (index + 1) )
                 })
                 
                 this.CONTINUE()
