@@ -24,7 +24,7 @@ StartTest(function(t) {
                 dbName  : 'kiokujs-backend-couchdb-' + new Date().getTime()
             })
             
-            backend.createDB().andThen(function () {
+            backend.__createDB().andThen(function () {
                 
                 this.CONTINUE(KiokuJS.connect({
                     backend : backend
@@ -33,7 +33,7 @@ StartTest(function(t) {
         },
         
         cleanup : function (handle, t) {
-            handle.backend.deleteDB().now()
+            handle.backend.__deleteDB().now()
         }
         
     }).runAllFixtures().andThen(function () {

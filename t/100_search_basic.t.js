@@ -22,9 +22,9 @@ StartTest(function(t) {
     })
     
     
-    backend.createDB().then(function () {
+    backend.__createDB().then(function () {
         
-        backend.createView(
+        backend.__createView(
             'search_test', 
             'view1', 
         
@@ -99,7 +99,7 @@ StartTest(function(t) {
         
     }).FINALLY(function () {
         
-        backend.deleteDB().now()
+        backend.__deleteDB().now()
         
     }).andThen(function () {
         
