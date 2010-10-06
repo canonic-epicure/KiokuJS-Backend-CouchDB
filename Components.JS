@@ -5,16 +5,22 @@ COMPONENTS = {
 		"KiokuJS.Backend.CouchDB.Node",
         "KiokuJS.Backend.CouchDB"
 	],
+    
+    
+    "Prereq" : [
+        "jsan:Task.KiokuJS.Prereq",
+        "jsan:Task.HTTP.Request.Provider.Auto"
+    ],
 	
     
-    "WebPrereq" : [
-    	"jsan:Task.KiokuJS.WebPrereq",
+    "PureWebPrereq" : [
+    	"jsan:Task.KiokuJS.PureWebPrereq",
         "jsan:Task.HTTP.Request.Provider.Web"
     ],
     
     
-    "NodeJSPrereq" : [
-        "jsan:Task.KiokuJS.NodeJSPrereq",
+    "PureNodeJSPrereq" : [
+        "jsan:Task.KiokuJS.PureNodeJSPrereq",
         "jsan:Task.HTTP.Request.Provider.NodeJS"
     ],
     

@@ -36,11 +36,7 @@ StartTest(function(t) {
         
     }).then(function () {
         
-        var DB = KiokuJS.connect({
-            backend : backend
-        })
-        
-        var scope = DB.newScope()
+        var scope = backend.newScope()
         
         
         var person10 = new KiokuJS.Test.Person({

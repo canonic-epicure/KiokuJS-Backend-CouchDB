@@ -14,17 +14,10 @@ var INC = [ '../lib', '/jsan' ]
 Harness.configure({
 	title 	: 'KiokuJS.Backend.CouchDB Test Suite',
     
-    preload : Joose.is_NodeJS ? [
-        'Task.KiokuJS.Backend.CouchDB.NodeJSPrereq',
+    preload : [
+        'Task.KiokuJS.Backend.CouchDB.Prereq',
         {
-            text : "JooseX.Namespace.Depended.Manager.my.INC = " + JSON.stringify(INC)
-        },
-        'Task.KiokuJS.Backend.CouchDB.Test'
-        
-    ] : [
-        'Task.KiokuJS.Backend.CouchDB.WebPrereq',
-        {
-            text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(Harness.absolutizeINC(INC))
+            text : "JooseX.Namespace.Depended.Manager.my.INC = " + Harness.prepareINC(INC)
         },
         'Task.KiokuJS.Backend.CouchDB.Test'
     ]

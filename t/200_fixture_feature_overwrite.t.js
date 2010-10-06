@@ -26,14 +26,12 @@ StartTest(function(t) {
             
             backend.__createDB().andThen(function () {
                 
-                this.CONTINUE(KiokuJS.connect({
-                    backend : backend
-                }))
+                this.CONTINUE(backend)
             })
         },
         
         cleanup : function (handle, t) {
-            handle.backend.__deleteDB().now()
+            handle.__deleteDB().now()
         }
         
     }).runAllFixtures().andThen(function () {

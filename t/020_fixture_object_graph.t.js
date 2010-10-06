@@ -16,7 +16,7 @@ StartTest(function(t) {
         
         connect : function () {
             
-            var backend = new KiokuJS.Backend.CouchDB({
+            var handle = new KiokuJS.Backend.CouchDB({
                 host    : 'local',
                 port    : 1234,
                 prefix  : 'db',
@@ -24,16 +24,14 @@ StartTest(function(t) {
                 dbName  : 'kiokujs-backend-couchdb-' + new Date().getTime()
             })
             
-            backend.__createDB().andThen(function () {
+            handle.__createDB().andThen(function () {
                 
-                this.CONTINUE(KiokuJS.connect({
-                    backend : backend
-                }))
+                this.CONTINUE(handle)
             })
         },
         
         cleanup : function (handle, t) {
-            handle.backend.__deleteDB().now()
+            handle.__deleteDB().now()
         }
         
     }).runAllFixtures().andThen(function () {
