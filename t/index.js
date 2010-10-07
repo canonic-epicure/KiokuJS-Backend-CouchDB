@@ -34,6 +34,8 @@ Harness.start(
     '060_fixture_traits.t.js',
     '070_fixture_intrinsic.t.js',
     '080_fixture_immutable.t.js',
+    '081_fixture_animate_packet.t.js',
+    '082_fixture_proxy.t.js',
     '090_fixture_lazy.t.js',
     
     '100_search_basic.t.js',
