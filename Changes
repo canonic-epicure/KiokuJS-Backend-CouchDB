@@ -2,6 +2,8 @@ Release history for KiokuJS.Backend.CouchDB
 
 {{$NEXT}}
 
+        - first release for `npm`
+
 0.01      2010-10-11 16:24
 
         First version, released on an unsuspecting world.
