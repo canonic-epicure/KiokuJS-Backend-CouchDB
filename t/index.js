@@ -17,7 +17,7 @@ Harness.configure({
     preload : [
         'Task.KiokuJS.Backend.CouchDB.Prereq',
         {
-            text : "JooseX.Namespace.Depended.Manager.my.INC = " + Harness.prepareINC(INC)
+            text : "use.paths = " + Harness.prepareINC(INC)
         },
         'Task.KiokuJS.Backend.CouchDB.Test'
     ]

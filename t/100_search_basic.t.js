@@ -10,15 +10,9 @@ StartTest(function(t) {
     
     var async0 = t.beginAsync()
     
-            
-    var dbName  = 'kiokujs-backend-couchdb-' + new Date().getTime()
     
     var backend = new KiokuJS.Backend.CouchDB({
-        host    : 'local',
-        port    : 1234,
-        prefix  : 'db',
-        
-        dbName  : dbName
+        dbURL   : 'http://local/5984/kiokujs-backend-couchdb-' + new Date().getTime()
     })
     
     
