@@ -2,6 +2,8 @@ Release history for KiokuJS.Backend.CouchDB
 
 {{$NEXT}}
 
+0.03      2011-03-18 15:38
+
         - refactored to adapt to recent changes in KiokuJS.Backend
 
 0.02      2010-11-01 16:34
