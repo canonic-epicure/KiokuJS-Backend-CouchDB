@@ -29,7 +29,16 @@ StartTest(function(t) {
         ).now()
         
     }).then(function () {
+        backend.__createView(
+            'search_test_name',
+            'view1',
         
+            function (doc) {
+        
+                if (doc.$entry && doc.className == 'KiokuJS.Test.Person') emit(doc.data.name, null)
+            }
+        ).now()
+    }).then(function () {
         var scope = backend.newScope()
         
         
@@ -73,7 +82,7 @@ StartTest(function(t) {
                 startkey    : 20,
                 limit       : 3
                 
-            }).andThen(function (person20) {
+            }).then(function (person20) {
                 
                 t.ok(person20.age == 20, 'Correct object returned first')
                 
@@ -84,7 +93,32 @@ StartTest(function(t) {
                 })
                 
                 this.CONTINUE()
-            })
+            }).then(function () {
+                // Filter by key
+                scope.search({
+                    designDoc : 'search_test',
+                    view      : 'view1',
+
+                    key       : 50
+                }).then(function (person) {
+                    t.ok(arguments.length === 1, 'One person only')
+                    t.ok(person50 === person, 'Person matching key')
+                    this.CONTINUE()
+                }).now()
+
+            }).then(function () {
+                // Filter by string keys
+                scope.search({
+                    designDoc : 'search_test_name',
+                    view      : 'view1',
+
+                    key : 'person40'
+                }).then(function (person) {
+                    t.ok(arguments.length === 1, 'One person only')
+                    t.ok(person40 === person, 'Person matching key')
+                    this.CONTINUE()
+                }).now()
+            }).now()
         })
         
     }).FINALLY(function () {
