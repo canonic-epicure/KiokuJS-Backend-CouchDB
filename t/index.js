@@ -8,18 +8,12 @@ if (typeof process != 'undefined' && process.pid) {
     Harness = Test.Run.Harness.Browser.ExtJS
         
     
-var INC = [ '../lib', '/jsan' ]
-
 
 Harness.configure({
 	title 	: 'KiokuJS.Backend.CouchDB Test Suite',
     
     preload : [
-        'Task.KiokuJS.Backend.CouchDB.Prereq',
-        {
-            text : "use.paths = " + Harness.prepareINC(INC)
-        },
-        'Task.KiokuJS.Backend.CouchDB.Test'
+        '../kiokujs-backend-couchdb-test.js'
     ]
 })
 

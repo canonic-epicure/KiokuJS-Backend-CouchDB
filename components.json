@@ -1,0 +1,35 @@
+{
+	'Core' : [
+		'KiokuJS.Backend.CouchDB.Node',
+        'KiokuJS.Backend.CouchDB'
+	],
+    
+    
+    'Prereq' : [
+        'node_modules/kiokujs/kiokujs-all.js',
+        'node_modules/http-request-provider/http-request-provider-all.js'
+    ],
+	
+    
+    'Test' : {
+        saveAs      : 'kiokujs-backend-couchdb-test.js',
+        
+        contains    : [
+            'node_modules/kiokujs/kiokujs-test.js',
+            'node_modules/http-request-provider/http-request-provider-all.js',
+            '+Core'
+        ]
+    },
+    
+    
+    'All' : {
+        saveAs      : 'kiokujs-backend-couchdb-all.js',
+        
+        contains    : [
+            '+Prereq',
+            '+Core'
+        ]
+    }
+
+}
+
