@@ -31,7 +31,8 @@ Harness.start(
     '081_fixture_animate_packet.t.js',
     '082_fixture_proxy.t.js',
     '090_fixture_lazy.t.js',
-    
+
+    '099_views.t.js',
     '100_search_basic.t.js',
     
     '200_fixture_feature_overwrite.t.js',
